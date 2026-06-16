@@ -1,0 +1,11 @@
+# Medios (videos, música, imágenes, salidas) — no subir
+fondos/
+musica/
+salida/
+assets/*
+!assets/fonts/        # permitir las fuentes (.ttf)
+
+# Entorno y artefactos de Python
+venv/
+__pycache__/
+*.pyc

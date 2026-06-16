@@ -1,0 +1,43 @@
+# Configuración del generador de reels.
+# Edita estos valores para cambiar el resultado sin tocar el código.
+
+entrada:
+   carpeta_fondos: fondos # carpeta donde se buscan los .mp4 de fondo
+   musica: musica/musica.mp3 # pista de audio de fondo
+   csv: textos.csv # archivo con la columna "texto"
+
+salida:
+   carpeta: salida # carpeta donde se guardan los reels
+   prefijo: reel # nombre base -> reel_01.mp4, reel_02.mp4, ...
+
+render:
+   ancho: 1080 # ancho final en px (9:16 vertical)
+   alto: 1920 # alto final en px
+   fps: 30 # cuadros por segundo
+   duracion_max: 10 # duración máxima de cada reel en segundos
+   codec: libx264 # codec de video
+   audio_codec: aac # codec de audio
+
+texto:
+   fuente: assets/fonts/Montserrat-Bold.ttf # ruta a una fuente .ttf (null = fuente por defecto)
+   tamano: 70 # tamaño de fuente
+   color: white # color del texto
+   ancho_caja: 1000 # ancho máximo de la caja de texto en px (envuelve líneas)
+   posicion_vertical: center # top | center | bottom
+   margen: 200 # margen vertical en px desde el borde (para top/bottom)
+   contorno:
+      color: black # color del contorno (stroke)
+      grosor: 3 # grosor del contorno en px (0 = sin contorno)
+   sombra:
+      activada: true # mostrar sombra detrás del texto
+      color: black # color de la sombra
+      offset: [4, 4] # desplazamiento [x, y] en px
+      opacidad: 0.6 # 0.0 (transparente) a 1.0 (opaca)
+
+branding:
+   activado: true # mostrar logo / marca de agua
+   logo: assets/logo.png # ruta al logo (png con transparencia recomendado)
+   posicion: top-right # top-left | top-right | bottom-left | bottom-right
+   escala: 0.15 # tamaño del logo como fracción del ancho del video
+   opacidad: 0.8 # 0.0 a 1.0
+   margen: 40 # margen en px desde los bordes

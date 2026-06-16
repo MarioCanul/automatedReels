@@ -4,3 +4,4 @@ numpy==2.4.6
 imageio==2.37.3
 imageio-ffmpeg==0.6.0
 pyyaml==6.0.2
+fonttools==4.63.0 # solo para generar fuentes estáticas (Bold) desde las variables

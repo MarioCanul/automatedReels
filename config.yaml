@@ -19,8 +19,10 @@ render:
    audio_codec: aac # codec de audio
 
 texto:
-   fuente: assets/fonts/Montserrat-Bold.ttf # ruta a una fuente .ttf (null = fuente por defecto)
-   tamano: 70 # tamaño de fuente
+   fuente: assets/fonts/Montserrat-BoldItalic.ttf # ruta a una fuente .ttf estática (Bold). Usa Montserrat-Bold.ttf para versión recta (no cursiva)
+   tamano: 70 # tamaño de fuente (máximo; punto de partida del autoajuste)
+   tamano_min: 30 # tamaño mínimo al autoajustar (no baja de aquí)
+   autoajustar: true # reduce el tamaño hasta que TODO el texto quepa (sin recortes)
    color: white # color del texto
    ancho_caja: 1000 # ancho máximo de la caja de texto en px (envuelve líneas)
    posicion_vertical: center # top | center | bottom
@@ -37,7 +39,7 @@ texto:
 branding:
    activado: true # mostrar logo / marca de agua
    logo: assets/logo.png # ruta al logo (png con transparencia recomendado)
-   posicion: top-right # top-left | top-right | bottom-left | bottom-right
+   posicion: bottom-right # top-left | top-right | bottom-left | bottom-right
    escala: 0.15 # tamaño del logo como fracción del ancho del video
    opacidad: 0.8 # 0.0 a 1.0
    margen: 40 # margen en px desde los bordes

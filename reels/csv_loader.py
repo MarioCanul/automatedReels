@@ -15,7 +15,7 @@ def cargar_textos(ruta_csv, prefijo="reel"):
     """
     items = []
     with open(ruta_csv, "r", encoding="utf-8-sig", newline="") as f:
-        lector = _csv.DictReader(f)
+        lector = _csv.DictReader(f, restkey="_sobrante")
         if lector.fieldnames is None or "texto" not in lector.fieldnames:
             raise ValueError(
                 f'El CSV {ruta_csv} debe tener una columna llamada "texto".'
@@ -23,6 +23,14 @@ def cargar_textos(ruta_csv, prefijo="reel"):
 
         indice = 0
         for fila in lector:
+            # Si el texto contiene comas sin comillas, el lector las interpreta
+            # como separadores y parte el valor: lo que sobra cae en "_sobrante".
+            # Reconstruimos la oración original uniéndolo de nuevo con comas
+            # para que el texto salga completo en el video.
+            sobrante = fila.pop("_sobrante", None)
+            if sobrante:
+                fila["texto"] = ",".join([fila.get("texto") or "", *sobrante])
+
             texto = (fila.get("texto") or "").strip()
             if not texto:
                 continue

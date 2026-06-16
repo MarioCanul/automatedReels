@@ -14,7 +14,7 @@ def _posicion(posicion, clip, ancho_video, alto_video, margen):
         "bottom-left": (margen, abajo),
         "bottom-right": (derecha, abajo),
     }
-    return mapa.get(posicion, mapa["top-right"])
+    return mapa.get(posicion, mapa["bottom-right"])
 
 
 def crear_logo(cfg, tamano_video, duracion):
@@ -38,7 +38,7 @@ def crear_logo(cfg, tamano_video, duracion):
     logo = logo.resized(width=ancho_logo)
 
     x, y = _posicion(
-        cfg.get("posicion", "top-right"),
+        cfg.get("posicion", "bottom-right"),
         logo,
         ancho_video,
         alto_video,

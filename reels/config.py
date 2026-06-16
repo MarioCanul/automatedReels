@@ -30,6 +30,8 @@ DEFAULTS = {
     "texto": {
         "fuente": None,
         "tamano": 70,
+        "tamano_min": 30,
+        "autoajustar": True,
         "color": "white",
         "ancho_caja": 1000,
         "posicion_vertical": "center",
@@ -45,7 +47,7 @@ DEFAULTS = {
     "branding": {
         "activado": False,
         "logo": "assets/logo.png",
-        "posicion": "top-right",
+        "posicion": "bottom-right",
         "escala": 0.15,
         "opacidad": 0.8,
         "margen": 40,
